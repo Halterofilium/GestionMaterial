@@ -45,9 +45,9 @@ public interface PortatilDAORepositorio {
 	/**
 	 * Método que devuelve un registro especifico de BBDD.
 	 * @param id
-	 * @return PortatilDAO
+	 * @return List<PortatilDAO>
 	 * @throws Exception 
 	 */
-	public PortatilDAO where(int id) throws Exception;
+	public List<PortatilDAO> where(int id) throws Exception;
 	
 }

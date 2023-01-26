@@ -45,9 +45,9 @@ public interface AlumnoDAORepositorio {
 	/**
 	 * Método que devuelve un registro especifico de BBDD.
 	 * @param id
-	 * @return AlumnoDAO
+	 * @return List<AlumnoDAO>
 	 * @throws Exception 
 	 */
-	public AlumnoDAO where(int id) throws Exception;
+	public List<AlumnoDAO> where(int id) throws Exception;
 	
 }

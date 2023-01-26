@@ -47,11 +47,11 @@ public class AlumnoDAORepositorioImpl implements AlumnoDAORepositorio {
 		em.close();
 	}
 
-	public AlumnoDAO where(int id) throws Exception {
+	public List<AlumnoDAO> where(int id) throws Exception {
 		String jpql = "SELECT alumnoDAO FROM AlumnoDAO alumnoDAO WHERE alumnoDAO.id_alumno > :ID";
 		Query query = em.createQuery(jpql);
 		query.setParameter("ID", id);
-		return query.getResultList();
+		return query.getResultList(); 
 	}
 
 }

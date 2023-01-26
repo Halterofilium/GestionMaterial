@@ -51,50 +51,38 @@ public class PortatilDAO {
 	public String getMd_uuid() {
 		return md_uuid;
 	}
-
 	public void setMd_uuid(String md_uuid) {
 		this.md_uuid = md_uuid;
 	}
-
 	public Calendar getMd_fch() {
 		return md_fch;
 	}
-
 	public void setMd_fch(Calendar md_fch) {
 		this.md_fch = md_fch;
 	}
-
 	public int getId_portatil() {
 		return id_portatil;
 	}
-
 	public void setId_portatil(int id_portatil) {
 		this.id_portatil = id_portatil;
 	}
-
 	public String getMarca() {
 		return marca;
 	}
-
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
-
 	public String getModelo() {
 		return modelo;
 	}
-
 	public void setModelo(String modelo) {
 		this.modelo = modelo;
 	}
-
 	public AlumnoDAO getAlumnoDAO() {
 		return alumnoDAO;
 	}
-
 	public void setAlumnoDAO(AlumnoDAO alumnoDAO) {
 		this.alumnoDAO = alumnoDAO;
 	}
-
 
 }

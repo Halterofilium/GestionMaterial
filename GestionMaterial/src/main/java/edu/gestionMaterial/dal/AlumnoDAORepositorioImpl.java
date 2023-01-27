@@ -4,6 +4,7 @@
 package edu.gestionMaterial.dal;
 
 import java.util.List;
+import java.util.Scanner;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -36,15 +37,24 @@ public class AlumnoDAORepositorioImpl implements AlumnoDAORepositorio {
 		em.close();
 	}
 
-	public void update(AlumnoDAO alumnoDAO) throws Exception {
-		em.merge(alumnoDAO);
-		em.flush();
+	public void update(String nombreN, String nombreV) throws Exception {
+		String jpql = "UPDATE AlumnoDAO alumnoDAO SET alumnoDAO.nombre = >:nombreN WHERE alumnoDAO.nombre = >:nombreV";
+		Query query = em.createQuery(jpql);
+		query.setParameter("nombreN", nombreN);
+		query.setParameter("nombreV", nombreV);
+		int numeroModificaciones = query.executeUpdate();
+		System.out.println("[INFO] -Numero de modificaciones: " + numeroModificaciones);
 	}
 
 	public void delete(AlumnoDAO alumnoDAO) throws Exception {
-		em.remove(em.contains(alumnoDAO) ? alumnoDAO : em.merge(alumnoDAO));
-		em.clear();
-		em.close();
+		
+		if(preguntaSiNo("¿Seguro que quieres eliminar el alumno con id: ", alumnoDAO))
+		{
+			em.remove(em.contains(alumnoDAO) ? alumnoDAO : em.merge(alumnoDAO));
+			em.clear();
+			em.close();
+		}
+	
 	}
 
 	public List<AlumnoDAO> where(int id) throws Exception {
@@ -54,4 +64,45 @@ public class AlumnoDAORepositorioImpl implements AlumnoDAORepositorio {
 		return query.getResultList(); 
 	}
 
+
+	
+	public static Boolean preguntaSiNo(String pregunta, AlumnoDAO alumnoDAO) 
+	{ 
+		//Declaramos el escaner que imitara el funcionamiento de un input
+		Scanner sn = new Scanner(System.in);
+		
+		boolean check = false;
+		boolean repetir = true;
+		int cont = 0;
+		
+		do{ 
+			
+			if(cont>0)
+				System.out.print("\n\t\tError repita su respuesta otra vez");
+			
+			System.out.print("\t\t" + pregunta + alumnoDAO.id_alumno + "?" + "\n Si es así escriba su id, de lo contrario escriba 0: ");		  
+		         
+			int opc = sn.nextInt(); 
+			if(opc == alumnoDAO.id_alumno)  
+			{ 
+				check = true;
+				repetir = false; 
+			} 
+		        
+			if(opc == 0)
+			{ 
+				check = false;
+				repetir = false; 
+			} 		        	 
+		        
+			cont++;
+			
+		    }while(repetir); 
+		     
+		return check; 
+	}
+	
 }
+
+
+

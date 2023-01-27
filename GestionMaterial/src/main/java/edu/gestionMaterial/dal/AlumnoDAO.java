@@ -26,22 +26,22 @@ import javax.persistence.TemporalType;
 public class AlumnoDAO {
 
 	// Propiedades
-	@Column(name = "md_uuid", nullable = false)
+	@Column(name = "md_uuid")
 	String md_uuid;
 
-	@Column(name = "md_fch", nullable = false)
+	@Column(name = "md_fch")
 	@Temporal(TemporalType.DATE)
 	Calendar md_fch;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_alumno", nullable = false)
+	@Column(name = "id_alumno")
 	int id_alumno;
 
-	@Column(name = "nombre", nullable = false)
+	@Column(name = "nombre")
 	String nombre;
 
-	@Column(name = "tlf", nullable = false)
+	@Column(name = "tlf")
 	String tlf;
 
 	@OneToOne

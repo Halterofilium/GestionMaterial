@@ -34,13 +34,13 @@ public class AlumnoDTO {
 	 * @param tlf
 	 * @param portatilDAO
 	 */
-	public AlumnoDTO(String nombre, String tlf, PortatilDAO portatilDAO) {
+	public AlumnoDTO(String nombre, String tlf) {
 		super();
 		this.md_uuid = RandomValue();
 		this.md_fch = Calendar.getInstance();;
 		this.nombre = nombre;
 		this.tlf = tlf;
-		this.portatilDAO = portatilDAO;
+		this.portatilDAO = new PortatilDAO();
 	}
 	
 	/**

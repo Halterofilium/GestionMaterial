@@ -5,6 +5,8 @@ package edu.gestionMaterial.impl;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +17,7 @@ import edu.gestionMaterial.dal.PortatilDAORepositorio;
 
 /**
  * @author Talamino
- *  Clase que agrupa las transacaciones contra base de datos
+ * Clase que agrupa las transacaciones contra base de datos
  */
 
 @Service
@@ -26,6 +28,7 @@ public class ConsultasServicioImpl implements ConsultasServicio{
 	@Autowired
 	private AlumnoDAORepositorio adr;
 	
+	@Transactional
 	public List<AlumnoDAO> seleccionarTodosLosAlumnos() {
 		try {
 			return adr.select();
@@ -35,6 +38,7 @@ public class ConsultasServicioImpl implements ConsultasServicio{
 		}
 	}
 
+	@Transactional
 	public void insertarAlumno(AlumnoDAO alumnoDAO) {
 		try {
 			adr.insert(alumnoDAO);
@@ -44,15 +48,17 @@ public class ConsultasServicioImpl implements ConsultasServicio{
 		}	
 	}
 
-	public void actualizarAlumno(AlumnoDAO alumnoDAO) {
+	@Transactional
+	public void actualizarAlumno(String nombreN, String nombreV) {
 		try {
-			adr.update(alumnoDAO);
+			adr.update(nombreN, nombreV);
 			System.out.println("Registro actualizado correctamente");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}	
 	}
 
+	@Transactional
 	public void borrarAlumno(AlumnoDAO alumnoDAO) {
 		try {
 			adr.delete(alumnoDAO);
@@ -62,6 +68,7 @@ public class ConsultasServicioImpl implements ConsultasServicio{
 		}	
 	}
 
+	@Transactional
 	public List<AlumnoDAO> seleccionarAlumnoEspecifico(int id) {
 		try {
 			return adr.where(id);
@@ -77,6 +84,7 @@ public class ConsultasServicioImpl implements ConsultasServicio{
 	@Autowired
 	private PortatilDAORepositorio pdr;
 	
+	@Transactional
 	public List<PortatilDAO> seleccionarTodosLosPortatiles() {
 		try {
 			return pdr.select();
@@ -86,6 +94,7 @@ public class ConsultasServicioImpl implements ConsultasServicio{
 		}
 	}
 
+	@Transactional
 	public void insertarPortatil(PortatilDAO portatilDAO) {
 		try {
 			pdr.insert(portatilDAO);
@@ -95,16 +104,18 @@ public class ConsultasServicioImpl implements ConsultasServicio{
 		}	
 		
 	}
-
-	public void actualizarPortatil(PortatilDAO portatilDAO) {
+	
+	@Transactional
+	public void actualizarPortatil(String marcaN, String marcaV) {
 		try {
-			pdr.update(portatilDAO);
+			pdr.update(marcaN, marcaV);
 			System.out.println("Registro actualizado correctamente");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}	
 	}
 
+	@Transactional
 	public void borrarPortatil(PortatilDAO portatilDAO) {
 		try {
 			pdr.delete(portatilDAO);
@@ -114,6 +125,7 @@ public class ConsultasServicioImpl implements ConsultasServicio{
 		}
 	}
 
+	@Transactional
 	public List<PortatilDAO> seleccionarPortatilEspecifico(int id) {
 		try {
 			return pdr.where(id);

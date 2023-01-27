@@ -18,7 +18,7 @@ import javax.persistence.TemporalType;
 /**
  * @author Talamino
  * 
- *         DAO para la entidad dlk_tch_Portatil
+ * DAO para la entidad dlk_tch_Portatil
  */
 
 @Entity
@@ -26,22 +26,22 @@ import javax.persistence.TemporalType;
 public class PortatilDAO {
 
 	// Propiedades
-	@Column(name = "md_uuid", nullable = false)
+	@Column(name = "md_uuid")
 	String md_uuid;
 
-	@Column(name = "md_fch", nullable = false)
+	@Column(name = "md_fch")
 	@Temporal(TemporalType.DATE)
 	Calendar md_fch;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_portatil", nullable = false)
+	@Column(name = "id_portatil")
 	int id_portatil;
 	
-	@Column(name = "marca", nullable = false)
+	@Column(name = "marca")
 	String marca;
 	
-	@Column(name = "modelo", nullable = false)
+	@Column(name = "modelo")
 	String modelo;
 	
 	@OneToOne(mappedBy ="portatilDAO")

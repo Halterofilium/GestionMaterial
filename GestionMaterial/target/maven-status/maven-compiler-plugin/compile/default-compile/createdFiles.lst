@@ -1,0 +1,17 @@
+edu\gestionMaterial\impl\ConsultasServicio.class
+edu\gestionMaterial\dtos\ToDTOServicioImpl.class
+edu\gestionMaterial\controlador\GestorMenu.class
+edu\gestionMaterial\dal\PortatilDAORepositorioImpl.class
+edu\gestionMaterial\dtos\ToDAOServicio.class
+edu\gestionMaterial\dal\PortatilDAO.class
+edu\gestionMaterial\impl\MenuServiceImpl.class
+edu\gestionMaterial\dtos\ToDAOServicioImpl.class
+edu\gestionMaterial\dal\AlumnoDAORepositorioImpl.class
+edu\gestionMaterial\dal\AlumnoDAORepositorio.class
+edu\gestionMaterial\dtos\AlumnoDTO.class
+edu\gestionMaterial\impl\ConsultasServicioImpl.class
+edu\gestionMaterial\dtos\PortatilDTO.class
+edu\gestionMaterial\dtos\ToDTOServicio.class
+edu\gestionMaterial\dal\PortatilDAORepositorio.class
+edu\gestionMaterial\impl\MenuService.class
+edu\gestionMaterial\dal\AlumnoDAO.class

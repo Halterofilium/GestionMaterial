@@ -33,7 +33,7 @@ public interface PortatilDAORepositorio {
 	 * @param portatilDAO
 	 * @throws Exception 
 	 */
-	public void update(PortatilDAO portatilDAO) throws Exception;
+	public void update(String marcaN, String marcaV) throws Exception;
 	
 	/**
 	 * Método que elimina un repostage en base de datos.

@@ -33,7 +33,7 @@ public interface AlumnoDAORepositorio {
 	 * @param alumnoDAO
 	 * @throws Exception 
 	 */
-	public void update(AlumnoDAO alumnoDAO) throws Exception;
+	public void update(String nombreN, String nombreV) throws Exception;
 	
 	/**
 	 * Método que elimina un repostage en base de datos.

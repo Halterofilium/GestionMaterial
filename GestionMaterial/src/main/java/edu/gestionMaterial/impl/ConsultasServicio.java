@@ -32,7 +32,7 @@ public interface ConsultasServicio {
 	 * repostajeGasolinera: Actualiza en base de datos a un alumno
 	 * @param alumnoDAO
 	 */
-	public void actualizarAlumno(AlumnoDAO alumnoDAO);
+	public void actualizarAlumno(String nombreN, String nombreV);
 	
 	/**
 	 * repostajeGasolinera: Elimina en base de datos a un alumno
@@ -66,7 +66,7 @@ public interface ConsultasServicio {
 	 * repostajeGasolinera: Actualiza en base de datos a un portatil
 	 * @param portatilDAO
 	 */
-	public void actualizarPortatil(PortatilDAO portatilDAO);
+	public void actualizarPortatil(String marcaN, String marcaV);
 	
 	/**
 	 * repostajeGasolinera: Elimina en base de datos a un portatil

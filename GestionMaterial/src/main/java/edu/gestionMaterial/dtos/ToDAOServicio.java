@@ -25,5 +25,6 @@ public interface ToDAOServicio {
 	 * @return PortatilDAO
 	 */
 	public PortatilDAO PortatilToDAO(PortatilDTO portatilDTO);
+
 	
 }

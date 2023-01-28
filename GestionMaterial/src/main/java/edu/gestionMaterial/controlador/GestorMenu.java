@@ -7,6 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 
+import edu.gestionMaterial.dal.AlumnoDAO;
 import edu.gestionMaterial.impl.ConsultasServicio;
 import edu.gestionMaterial.impl.MenuService;
 import edu.gestionMaterial.impl.MenuServiceImpl;
@@ -29,7 +30,11 @@ public class GestorMenu {
 		ApplicationContext context = new ClassPathXmlApplicationContext("contexto.xml");
 		ConsultasServicio consulta = (ConsultasServicio) context.getBean(ConsultasServicio.class);
 
+		
+		//Instancia del menu, con el cual se interactua con las funcionalidades del programa
 		MenuService menu = new MenuServiceImpl(); 
+		
+		//Logica del menu
 		int opcion = 3; 
 
 		while (opcion != 0) {
@@ -41,22 +46,22 @@ public class GestorMenu {
 				menu.MatrículaAlumno(consulta);
 				break;
 			case 2:
-				
+				menu.BajaAlumno(consulta);
 				break;
 			case 3:
-				
+				menu.AltaPortatil(consulta);
 				break;
 			case 4:
-				
+				menu.ConsultaPortatilDeAlumno(consulta);
 				break;
 			case 5:
-				
+				menu.ConsultaElAlumnoAsigandoAlPortatil(consulta);
 				break;
 			case 6:
-				
+				menu.TodosLosAlumnosConSusRepectivosPortatiles(consulta);
 				break;
 			case 0:
-				
+				System.out.println("\n\t\tGracias por usar nuestra app");
 				break;
 			default:
 				System.out.println("\n\t\tSolo números entre 0 y 7");

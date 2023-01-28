@@ -28,7 +28,7 @@
 	<!-- Configuración del JPA -->
 	<bean id="entityManagerFactory" 
 			class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
-			p:packagesToScan="edu.gestionMaterial.dal, edu.gestionMaterial.impl, edu.gestionMaterial.controlador"
+			p:packagesToScan="edu.gestionMaterial.dal"
             p:dataSource-ref="dataSource"
 			>
 		<property name="jpaVendorAdapter">

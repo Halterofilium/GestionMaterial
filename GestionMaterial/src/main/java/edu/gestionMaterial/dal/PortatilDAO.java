@@ -26,22 +26,22 @@ import javax.persistence.TemporalType;
 public class PortatilDAO {
 
 	// Propiedades
-	@Column(name = "md_uuid")
+	@Column(name = "md_uuid", nullable=false)
 	String md_uuid;
 
-	@Column(name = "md_fch")
+	@Column(name = "md_fch", nullable=false)
 	@Temporal(TemporalType.DATE)
 	Calendar md_fch;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_portatil")
+	@Column(name = "id_portatil", nullable=false)
 	int id_portatil;
 	
-	@Column(name = "marca")
+	@Column(name = "marca", nullable=false)
 	String marca;
 	
-	@Column(name = "modelo")
+	@Column(name = "modelo", nullable=false)
 	String modelo;
 	
 	@OneToOne(mappedBy ="portatilDAO")

@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 
 import edu.gestionMaterial.dal.AlumnoDAO;
 import edu.gestionMaterial.dal.AlumnoDAORepositorio;
@@ -28,6 +29,7 @@ public class ConsultasServicioImpl implements ConsultasServicio{
 	@Autowired
 	private AlumnoDAORepositorio adr;
 	
+	@Override
 	@Transactional
 	public List<AlumnoDAO> seleccionarTodosLosAlumnos() {
 		try {
@@ -38,6 +40,7 @@ public class ConsultasServicioImpl implements ConsultasServicio{
 		}
 	}
 
+	@Override
 	@Transactional
 	public void insertarAlumno(AlumnoDAO alumnoDAO) {
 		try {
@@ -48,7 +51,8 @@ public class ConsultasServicioImpl implements ConsultasServicio{
 		}	
 	}
 
-	@Transactional
+	@Override
+	@Transactional()
 	public void actualizarAlumno(String nombreN, String nombreV) {
 		try {
 			adr.update(nombreN, nombreV);
@@ -58,6 +62,7 @@ public class ConsultasServicioImpl implements ConsultasServicio{
 		}	
 	}
 
+	@Override
 	@Transactional
 	public void borrarAlumno(AlumnoDAO alumnoDAO) {
 		try {
@@ -68,6 +73,7 @@ public class ConsultasServicioImpl implements ConsultasServicio{
 		}	
 	}
 
+	@Override
 	@Transactional
 	public List<AlumnoDAO> seleccionarAlumnoEspecifico(int id) {
 		try {
@@ -84,6 +90,7 @@ public class ConsultasServicioImpl implements ConsultasServicio{
 	@Autowired
 	private PortatilDAORepositorio pdr;
 	
+	@Override
 	@Transactional
 	public List<PortatilDAO> seleccionarTodosLosPortatiles() {
 		try {
@@ -94,6 +101,7 @@ public class ConsultasServicioImpl implements ConsultasServicio{
 		}
 	}
 
+	@Override
 	@Transactional
 	public void insertarPortatil(PortatilDAO portatilDAO) {
 		try {
@@ -105,6 +113,7 @@ public class ConsultasServicioImpl implements ConsultasServicio{
 		
 	}
 	
+	@Override
 	@Transactional
 	public void actualizarPortatil(String marcaN, String marcaV) {
 		try {
@@ -115,6 +124,7 @@ public class ConsultasServicioImpl implements ConsultasServicio{
 		}	
 	}
 
+	@Override
 	@Transactional
 	public void borrarPortatil(PortatilDAO portatilDAO) {
 		try {
@@ -125,6 +135,7 @@ public class ConsultasServicioImpl implements ConsultasServicio{
 		}
 	}
 
+	@Override
 	@Transactional
 	public List<PortatilDAO> seleccionarPortatilEspecifico(int id) {
 		try {

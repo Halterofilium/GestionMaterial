@@ -22,7 +22,7 @@ import javax.persistence.TemporalType;
  */
 
 @Entity
-@Table(name = "dlk_tch_Alumno", schema = "dlk_gestion_material")
+@Table(name = "dlk_tch_alumno", schema = "dlk_gestion_material")
 public class AlumnoDAO {
 
 	// Propiedades
